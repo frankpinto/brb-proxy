@@ -92,7 +92,7 @@ class WeightedReverseProxy
 
   def forward_request(method, path, headers, body, backend)
     if path == '/up'
-      http_response = Net::HTTPSuccess.new(Net::HTTP, '200', 'OK')
+      return Net::HTTPSuccess.new(Net::HTTP, '200', 'OK').body.to_s
     end
 
     uri = URI(backend[:url] + path)
