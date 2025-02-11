@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'socket'
 require 'uri'
 require 'net/http'
