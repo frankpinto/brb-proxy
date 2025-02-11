@@ -7,7 +7,7 @@ image: frankpinto/brb-prox
 # Deploy to these servers.
 servers:
   web:
-    - 96.230.59.11
+    - 34.229.167.127
   # job:
   #   hosts:
   #     - 192.168.0.1
@@ -57,7 +57,7 @@ builder:
 # Use a different ssh user than root
 #
 # ssh:
-#   user: app
+   user: ubuntu
 
 # Use a persistent storage volume.
 #
