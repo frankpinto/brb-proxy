@@ -14,8 +14,8 @@ class WeightedReverseProxy
     # Define backend servers with weights
     # Weights represent relative traffic distribution (e.g., 70-30 split)
     @backends = [
-      { url: 'http://localhost:3000', weight: 70 },
-      { url: 'http://localhost:3001', weight: 30 }
+      { url: 'http://bostonrb.dartbuilt.com:3000', weight: 70 },
+      { url: 'http://bostonrb.dartbuilt.com:3001', weight: 30 }
     ]
 
     # Normalize weights to ensure they sum to 100
@@ -91,6 +91,10 @@ class WeightedReverseProxy
   end
 
   def forward_request(method, path, headers, body, backend)
+    if path == '/up'
+      http_response = Net::HTTPSuccess.new(Net::HTTP, '200', 'OK')
+    end
+
     uri = URI(backend[:url] + path)
 
     # Create new request
