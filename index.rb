@@ -93,7 +93,7 @@ class WeightedReverseProxy
   def forward_request(method, path, headers, body, backend)
     puts path
     if path == '/up'
-      return "HTTP/0.9 200 OK"
+      return "HTTP/1.1 200 OK"
     end
 
     uri = URI(backend[:url] + path)
